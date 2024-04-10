@@ -54,7 +54,7 @@ const tableOfContents = [
                     {
                         format: "<b>[Specification]</b> <a href='#' onclick='{loadThis}'>{title}</a>",
                         title: "Example Spec 1",
-                        url: "ExampleApp1/__SPEC_DOCS/ExampleSpec1/",
+                        url: "ExampleApp1/SPEC_DOCS/ExampleSpec1/",
                         id: "ExampleApp1_ExampleSpec1",
                         hasConnector: true
                     },
@@ -62,7 +62,7 @@ const tableOfContents = [
                     {
                         format: "<b>[Specification]</b> <a href='#' onclick='{loadThis}'>{title}</a>",
                         title: "Example Spec 2",
-                        url: "ExampleApp1/__SPEC_DOCS/ExampleSpec2/",
+                        url: "ExampleApp1/SPEC_DOCS/ExampleSpec2/",
                         id: "ExampleApp1_ExampleSpec2",
                         hasConnector: true
                     }
