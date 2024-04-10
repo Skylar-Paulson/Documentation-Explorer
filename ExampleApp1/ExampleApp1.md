@@ -12,7 +12,7 @@ Version: 1.0.4
 <!-- Document Start -->
 #### Example App 1
 
-> **(DISABLED FOR EXAMPLE APP) For objects, methods, and properties, refer to [Source Documentation](source_docs/html/index.html)**
+> **For objects, methods, and properties, refer to [Source Documentation](source_docs/html/index.html)**
 
 ---
 
