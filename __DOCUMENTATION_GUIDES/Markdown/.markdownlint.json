@@ -1,0 +1,22 @@
+{
+    "_comments": {
+        "Configuration Info": "https://github.com/DavidAnson/vscode-markdownlint#configure",
+        "MD009": "Trailing spaces",
+        "MD012": "Multiple consecutive blank lines",
+        "MD013": "Line length warnings",
+        "MD025": "Multiple top level headers in the same document",
+        "MD028": "Blank line inside block quotes",
+        "MD032": "Lists should be surrounded by blank lines",
+        "MD033": "Inline HTML warnings",
+        "MD041": "First line in file should be a top level header"
+    },
+
+    "MD009": false,
+    "MD012": false,
+    "MD013": false, 
+    "MD025": false,
+    "MD028": false,
+    "MD032": false,
+    "MD033": false,
+    "MD041": false
+}

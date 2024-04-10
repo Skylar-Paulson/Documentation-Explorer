@@ -1,0 +1,1414 @@
+<!--
+
+  Documentation paths can be edited via the Documentation_Paths.js file in the same directory as this file.
+
+-->
+
+<!--
+
+  NOTE: CONNECTOR SCRIPT IS REQUIRED FOR OUTLINE FUNCTIONALITY! 
+  DOCUMENTATION HTML PAGES MUST INCLUDE IT FOR OUTLINE FUNCTIONALITY TO WORK.
+
+  To enable explorer-doc communication and outline functionality, include the 
+  following script in the documentation file:
+  
+  <script type="text/javascript" src="../__DOCUMENTATION_EXPLORER/Connector.js"></script>
+-->
+
+<head>
+  <script src="https://kit.fontawesome.com/f77230184a.js" crossorigin="anonymous"></script>
+  <style>
+    code[class*=language-],
+    pre[class*=language-] {
+      color: #333;
+      background: 0 0;
+      font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      text-align: left;
+      white-space: pre;
+      word-spacing: normal;
+      word-break: normal;
+      word-wrap: normal;
+      line-height: 1.4;
+      -moz-tab-size: 8;
+      -o-tab-size: 8;
+      tab-size: 8;
+      -webkit-hyphens: none;
+      -moz-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none
+    }
+
+    pre[class*=language-] {
+      padding: .8em;
+      overflow: auto;
+      border-radius: 3px;
+      background: #f5f5f5
+    }
+
+    :not(pre)>code[class*=language-] {
+      padding: .1em;
+      border-radius: .3em;
+      white-space: normal;
+      background: #f5f5f5
+    }
+
+    .token.blockquote,
+    .token.comment {
+      color: #969896
+    }
+
+    .token.cdata {
+      color: #183691
+    }
+
+    .token.doctype,
+    .token.macro.property,
+    .token.punctuation,
+    .token.variable {
+      color: #333
+    }
+
+    .token.builtin,
+    .token.important,
+    .token.keyword,
+    .token.operator,
+    .token.rule {
+      color: #a71d5d
+    }
+
+    .token.attr-value,
+    .token.regex,
+    .token.string,
+    .token.url {
+      color: #183691
+    }
+
+    .token.atrule,
+    .token.boolean,
+    .token.code,
+    .token.command,
+    .token.constant,
+    .token.entity,
+    .token.number,
+    .token.property,
+    .token.symbol {
+      color: #0086b3
+    }
+
+    .token.prolog,
+    .token.selector,
+    .token.tag {
+      color: #63a35c
+    }
+
+    .token.attr-name,
+    .token.class,
+    .token.class-name,
+    .token.function,
+    .token.id,
+    .token.namespace,
+    .token.pseudo-class,
+    .token.pseudo-element,
+    .token.url-reference .token.variable {
+      color: #795da3
+    }
+
+    .token.entity {
+      cursor: help
+    }
+
+    .token.title,
+    .token.title .token.punctuation {
+      font-weight: 700;
+      color: #1d3e81
+    }
+
+    .token.list {
+      color: #ed6a43
+    }
+
+    .token.inserted {
+      background-color: #eaffea;
+      color: #55a532
+    }
+
+    .token.deleted {
+      background-color: #ffecec;
+      color: #bd2c00
+    }
+
+    .token.bold {
+      font-weight: 700
+    }
+
+    .token.italic {
+      font-style: italic
+    }
+
+    .language-json .token.property {
+      color: #183691
+    }
+
+    .language-markup .token.tag .token.punctuation {
+      color: #333
+    }
+
+    .language-css .token.function,
+    code.language-css {
+      color: #0086b3
+    }
+
+    .language-yaml .token.atrule {
+      color: #63a35c
+    }
+
+    code.language-yaml {
+      color: #183691
+    }
+
+    .language-ruby .token.function {
+      color: #333
+    }
+
+    .language-markdown .token.url {
+      color: #795da3
+    }
+
+    .language-makefile .token.symbol {
+      color: #795da3
+    }
+
+    .language-makefile .token.variable {
+      color: #183691
+    }
+
+    .language-makefile .token.builtin {
+      color: #0086b3
+    }
+
+    .language-bash .token.keyword {
+      color: #0086b3
+    }
+
+    pre[data-line] {
+      position: relative;
+      padding: 1em 0 1em 3em
+    }
+
+    pre[data-line] .line-highlight-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: transparent;
+      display: block;
+      width: 100%
+    }
+
+    pre[data-line] .line-highlight {
+      position: absolute;
+      left: 0;
+      right: 0;
+      padding: inherit 0;
+      margin-top: 1em;
+      background: hsla(24, 20%, 50%, .08);
+      background: linear-gradient(to right, hsla(24, 20%, 50%, .1) 70%, hsla(24, 20%, 50%, 0));
+      pointer-events: none;
+      line-height: inherit;
+      white-space: pre
+    }
+
+    pre[data-line] .line-highlight:before,
+    pre[data-line] .line-highlight[data-end]:after {
+      content: attr(data-start);
+      position: absolute;
+      top: .4em;
+      left: .6em;
+      min-width: 1em;
+      padding: 0 .5em;
+      background-color: hsla(24, 20%, 50%, .4);
+      color: #f4f1ef;
+      font: bold 65%/1.5 sans-serif;
+      text-align: center;
+      vertical-align: .3em;
+      border-radius: 999px;
+      text-shadow: none;
+      box-shadow: 0 1px #fff
+    }
+
+    pre[data-line] .line-highlight[data-end]:after {
+      content: attr(data-end);
+      top: auto;
+      bottom: .4em
+    }
+
+    html body {
+      font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+      overflow: initial;
+      box-sizing: border-box;
+      word-wrap: break-word
+    }
+
+    html body>:first-child {
+      margin-top: 0
+    }
+
+    html body h1,
+    html body h2,
+    html body h3,
+    html body h4,
+    html body h5,
+    html body h6 {
+      line-height: 1.2;
+      margin-top: 1em;
+      margin-bottom: 16px;
+      color: #000
+    }
+
+    html body h1 {
+      font-size: 2.25em;
+      font-weight: 300;
+      padding-bottom: .3em
+    }
+
+    html body h2 {
+      font-size: 1.75em;
+      font-weight: 400;
+      padding-bottom: .3em
+    }
+
+    html body h3 {
+      font-size: 1.5em;
+      font-weight: 500
+    }
+
+    html body h4 {
+      font-size: 1.25em;
+      font-weight: 600
+    }
+
+    html body h5 {
+      font-size: 1.1em;
+      font-weight: 600
+    }
+
+    html body h6 {
+      font-size: 1em;
+      font-weight: 600
+    }
+
+    html body h1,
+    html body h2,
+    html body h3,
+    html body h4,
+    html body h5 {
+      font-weight: 600
+    }
+
+    html body h5 {
+      font-size: 1em
+    }
+
+    html body h6 {
+      color: #5c5c5c
+    }
+
+    html body strong {
+      color: #000
+    }
+
+    html body del {
+      color: #5c5c5c
+    }
+
+    html body a:not([href]) {
+      color: inherit;
+      text-decoration: none
+    }
+
+    html body a {
+      color: #08c;
+      text-decoration: none
+    }
+
+    html body a:hover {
+      color: #00a3f5;
+      text-decoration: none
+    }
+
+    html body img {
+      max-width: 100%
+    }
+
+    html body>p {
+      margin-top: 0;
+      margin-bottom: 16px;
+      word-wrap: break-word
+    }
+
+    html body>ol,
+    html body>ul {
+      margin-bottom: 16px
+    }
+
+    html body ol,
+    html body ul {
+      padding-left: 2em
+    }
+
+    html body ol.no-list,
+    html body ul.no-list {
+      padding: 0;
+      list-style-type: none
+    }
+
+    html body ol ol,
+    html body ol ul,
+    html body ul ol,
+    html body ul ul {
+      margin-top: 0;
+      margin-bottom: 0
+    }
+
+    html body li {
+      margin-bottom: 0
+    }
+
+    html body li.task-list-item {
+      list-style: none
+    }
+
+    html body li>p {
+      margin-top: 0;
+      margin-bottom: 0
+    }
+
+    html body .task-list-item-checkbox {
+      margin: 0 .2em .25em -1.8em;
+      vertical-align: middle
+    }
+
+    html body .task-list-item-checkbox:hover {
+      cursor: pointer
+    }
+
+    html body blockquote {
+      margin: 16px 0;
+      font-size: inherit;
+      padding: 0 15px;
+      color: #5c5c5c;
+      background-color: #f0f0f0;
+      border-left: 4px solid #d6d6d6
+    }
+
+    html body blockquote>:first-child {
+      margin-top: 0
+    }
+
+    html body blockquote>:last-child {
+      margin-bottom: 0
+    }
+
+    html body hr {
+      height: 4px;
+      margin: 32px 0;
+      background-color: #d6d6d6;
+      border: 0 none
+    }
+
+    html body table {
+      margin: 10px 0 15px 0;
+      border-collapse: collapse;
+      border-spacing: 0;
+      display: block;
+      width: 100%;
+      overflow: auto;
+      word-break: normal;
+      word-break: keep-all
+    }
+
+    html body table th {
+      font-weight: 700;
+      color: #000
+    }
+
+    html body table td,
+    html body table th {
+      border: 1px solid #d6d6d6;
+      padding: 6px 13px
+    }
+
+    html body dl {
+      padding: 0
+    }
+
+    html body dl dt {
+      padding: 0;
+      margin-top: 16px;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: 700
+    }
+
+    html body dl dd {
+      padding: 0 16px;
+      margin-bottom: 16px
+    }
+
+    html body code {
+      font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+      font-size: .85em;
+      color: #000;
+      background-color: #f0f0f0;
+      border-radius: 3px;
+      padding: .2em 0
+    }
+
+    html body code::after,
+    html body code::before {
+      letter-spacing: -.2em;
+      content: '\00a0'
+    }
+
+    html body pre>code {
+      padding: 0;
+      margin: 0;
+      word-break: normal;
+      white-space: pre;
+      background: 0 0;
+      border: 0
+    }
+
+    html body .highlight {
+      margin-bottom: 16px
+    }
+
+    html body .highlight pre,
+    html body pre {
+      padding: 1em;
+      overflow: auto;
+      line-height: 1.45;
+      border: #d6d6d6;
+      border-radius: 3px
+    }
+
+    html body .highlight pre {
+      margin-bottom: 0;
+      word-break: normal
+    }
+
+    html body pre code,
+    html body pre tt {
+      display: inline;
+      max-width: initial;
+      padding: 0;
+      margin: 0;
+      overflow: initial;
+      line-height: inherit;
+      word-wrap: normal;
+      background-color: transparent;
+      border: 0
+    }
+
+    html body pre code:after,
+    html body pre code:before,
+    html body pre tt:after,
+    html body pre tt:before {
+      content: normal
+    }
+
+    html body blockquote,
+    html body dl,
+    html body ol,
+    html body p,
+    html body pre,
+    html body ul {
+      margin-top: 0;
+      margin-bottom: 16px
+    }
+
+    html body kbd {
+      color: #000;
+      border: 1px solid #d6d6d6;
+      border-bottom: 2px solid #c7c7c7;
+      padding: 2px 4px;
+      background-color: #f0f0f0;
+      border-radius: 3px
+    }
+
+    @media print {
+      html body {
+        background-color: #fff
+      }
+
+      html body h1,
+      html body h2,
+      html body h3,
+      html body h4,
+      html body h5,
+      html body h6 {
+        color: #000;
+        page-break-after: avoid
+      }
+
+      html body blockquote {
+        color: #5c5c5c
+      }
+
+      html body pre {
+        page-break-inside: avoid
+      }
+
+      html body table {
+        display: table
+      }
+
+      html body img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%
+      }
+
+      html body code,
+      html body pre {
+        word-wrap: break-word;
+        white-space: pre
+      }
+    }
+
+    .markdown-preview {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box
+    }
+
+    .markdown-preview ul {
+      list-style: disc
+    }
+
+    .markdown-preview ul ul {
+      list-style: circle
+    }
+
+    .markdown-preview ul ul ul {
+      list-style: square
+    }
+
+    .markdown-preview ol {
+      list-style: decimal
+    }
+
+    .markdown-preview ol ol,
+    .markdown-preview ul ol {
+      list-style-type: lower-roman
+    }
+
+    .markdown-preview ol ol ol,
+    .markdown-preview ol ul ol,
+    .markdown-preview ul ol ol,
+    .markdown-preview ul ul ol {
+      list-style-type: lower-alpha
+    }
+
+    .markdown-preview .newpage,
+    .markdown-preview .pagebreak {
+      page-break-before: always
+    }
+
+    .markdown-preview pre.line-numbers {
+      position: relative;
+      padding-left: 3.8em;
+      counter-reset: linenumber
+    }
+
+    .markdown-preview pre.line-numbers>code {
+      position: relative
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows {
+      position: absolute;
+      pointer-events: none;
+      top: 1em;
+      font-size: 100%;
+      left: 0;
+      width: 3em;
+      letter-spacing: -1px;
+      border-right: 1px solid #999;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows>span {
+      pointer-events: none;
+      display: block;
+      counter-increment: linenumber
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows>span:before {
+      content: counter(linenumber);
+      color: #999;
+      display: block;
+      padding-right: .8em;
+      text-align: right
+    }
+
+    .markdown-preview .mathjax-exps .MathJax_Display {
+      text-align: center !important
+    }
+
+    .markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group {
+      display: none
+    }
+
+    .markdown-preview:not([data-for=preview]) .code-chunk .status {
+      display: none
+    }
+
+    .markdown-preview:not([data-for=preview]) .code-chunk .output-div {
+      margin-bottom: 16px
+    }
+
+    .markdown-preview .md-toc {
+      padding: 0
+    }
+
+    .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link {
+      display: inline;
+      padding: .25rem 0
+    }
+
+    .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,
+    .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p {
+      display: inline
+    }
+
+    .markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
+      font-weight: 800
+    }
+
+    .scrollbar-style::-webkit-scrollbar {
+      width: 8px
+    }
+
+    .scrollbar-style::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: transparent
+    }
+
+    .scrollbar-style::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: rgba(150, 150, 150, .66);
+      border: 4px solid rgba(150, 150, 150, .66);
+      background-clip: content-box
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]) {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      overflow: auto
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+      position: relative;
+      top: 0;
+      min-height: 100vh
+    }
+
+    @media screen and (min-width:914px) {
+      html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+        padding: 2em calc(50% - 457px + 2em)
+      }
+    }
+
+    @media screen and (max-width:914px) {
+      html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+        padding: 2em
+      }
+    }
+
+    @media screen and (max-width:450px) {
+      html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+        font-size: 14px !important;
+        padding: 1em
+      }
+    }
+
+    @media print {
+      html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn {
+        display: none
+      }
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn {
+      position: fixed;
+      bottom: 8px;
+      left: 8px;
+      font-size: 28px;
+      cursor: pointer;
+      color: inherit;
+      z-index: 99;
+      width: 32px;
+      text-align: center;
+      opacity: .4
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn {
+      opacity: 1
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 300px;
+      height: 100%;
+      padding: 32px 0 48px 0;
+      font-size: 14px;
+      box-shadow: 0 0 4px rgba(150, 150, 150, .33);
+      box-sizing: border-box;
+      overflow: auto;
+      background-color: inherit
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar {
+      width: 8px
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: transparent
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: rgba(150, 150, 150, .66);
+      border: 4px solid rgba(150, 150, 150, .66);
+      background-clip: content-box
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a {
+      text-decoration: none
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc {
+      padding: 0 16px
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link {
+      display: inline;
+      padding: .25rem 0
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p {
+      display: inline
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
+      font-weight: 800
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+      left: 300px;
+      width: calc(100% - 300px);
+      padding: 2em calc(50% - 457px - 300px / 2);
+      margin: 0;
+      box-sizing: border-box
+    }
+
+    @media screen and (max-width:1274px) {
+      html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+        padding: 2em
+      }
+    }
+
+    @media screen and (max-width:450px) {
+      html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+        width: 100%
+      }
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview {
+      left: 50%;
+      transform: translateX(-50%)
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc {
+      display: none
+    }
+
+    #menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: inline-flex;
+      /* Display items horizontally */
+    }
+
+    #menu li {
+      margin-right: 20px;
+      /* Add spacing between menu items */
+    }
+
+    #menu a {
+      text-decoration: none;
+      color: #333;
+      /* Set the link color */
+      font-weight: bold;
+    }
+
+    #menu a:hover {
+      color: #555;
+      /* Change color on hover */
+    }
+
+    #menu select {
+      border: none;
+      text-decoration: none;
+      color: #333;
+      font-size: medium;
+      font-weight: bold;
+    }
+
+    #menu select option {
+      /*color: #08c;
+      text-decoration: none;
+      font-weight: bold;*/
+      border: none;
+
+      text-decoration: none;
+      color: #333;
+      /* Set the link color */
+      font-weight: bold;
+    }
+
+    .centered {
+      align-items: center;
+      align-content: flex-end;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    body,
+    html {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      /* First row auto-sized, second row fills remaining space */
+      height: 100%;
+    }
+
+    .scroll-content {
+      overflow: auto;
+      border: none;
+    }
+
+    #content-frame {
+      overflow: auto;
+      height: 100%;
+      width: 100%;
+      border: none;
+    }
+
+    #navigation.normal {
+      padding-top: 2em;
+      padding-right: calc(50% + 2em - 457px);
+      padding-bottom: 0;
+      padding-left: calc(50% + 2em - 457px);
+    }
+
+    #navigation.in-doc {
+      padding-top: 0;
+      padding-left: calc(50% + 2em - 467px);
+      border-bottom: dashed;
+      border-color: lightgrey;
+    }
+
+    .menu-open {
+      color:#ffffff8c;
+      position: fixed;
+    }
+
+    #page-selector {
+      overflow: auto;
+    }
+
+    .viewport {
+      width: 100%;
+      display: inline-flex;
+      overflow: auto;
+    }
+
+    .frame-contents-menu-open {
+      width: 100%;
+    }
+
+    .viewport-contents  {
+      overflow: auto;
+      width: 20%;
+      border-left: dashed;
+      border-color: lightgrey;
+      padding: 10px;
+    }
+
+    .viewport-contents div {
+      overflow: auto;
+    }
+
+    .viewport-contents-menu-button {
+      width: 40px;
+      position: fixed;
+      height: 40px;
+      right: 5;
+      top: 5;
+      border: none;
+      background: none;
+    }
+
+    .top-bar {
+      width: 100%;
+    }
+
+    .toc-heading {
+      font-weight: bold;
+    }
+
+    .toc-nochildren {
+      list-style: none;
+    }
+
+    #contents-list > li {
+      list-style: none;
+      font-weight: bold;
+      font-size: large;
+    }
+
+    #contents-list > details > summary {
+      font-weight: bold;
+      font-size: large;
+    }
+
+    .error-block {
+      display: inline-flex;
+    }
+
+    #error-text {
+      color: red;
+    }
+
+    .dismiss-error-button {
+      background: none;
+      /* position: static; */
+      right: 0;
+      top: 0;
+      border: none;
+      font-weight: bold;
+      font-size: larger;
+      padding: 0px;
+      height: 40px;
+      color: #787878;
+    }
+
+    /* Must appear last to override other styles */
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <hidden id="top">
+  <div class="grid-container">
+    <div id="navigation" class="normal">
+      <div id="explorer-heading">
+        <hr class="invisible-in-docs">
+        <div class="top-bar">
+          <h6 id="explorer-title"><a id="title-text" href="#" onclick="toggleMenu()">Documentation Explorer</a></h6>
+          <button id="outline-menu-button" class="viewport-contents-menu-button hidden" onclick="toggleViewportContents()"><i class="fa-solid fa-bars"></i></button>
+        </div>
+        <hr class="visible-in-menu">
+
+        <!-- Error -->
+        <blockquote id="error-text-block" class="error-block hidden">
+          <p id="error-text">An error was encountered.</p>
+          <button class="dismiss-error-button" onclick="hide('#error-text-block')">✖</button>
+        </blockquote>
+        <blockquote class="invisible-in-docs">
+          <p>Below you will find links to various documentation files and guides.</p>
+        </blockquote>
+        <blockquote class="invisible-in-docs">
+          <em>For the best experience, view this file directly in your browser. HTML Previewers—such as the one in Teams and OneDrive/SharePoint—will likely break functionality. This file must be accessed from its original directory and all documentation files must be at their original paths relative to this file to work correctly, unless viewing on a web server.</em>
+        </blockquote>
+        <div id="page-selector" class="visible-in-menu">
+          <div class="scroll-content">
+            <div id="table-of-contents">
+              <ul id="contents-list"></ul>
+            </div>
+            <hr>
+            <!--<p><a href="#explorer-heading">Back to top</a></p>
+            <hr>-->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page container. -->
+    <div class="viewport">
+      <div class="scroll-content frame-contents-menu-open visible-in-docs hidden">
+        <iframe id="content-frame" title="Document Body" src=""></iframe>
+      </div>
+      <div id="viewport-outline-container" class="scroll-content viewport-contents hidden">
+        <hidden id="outline-top"></hidden>
+        <div id="viewport-outline">
+
+        </div>
+        <hr>
+            <p><a href="#outline-top">Back to top</a></p>
+        <hr>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script type="text/javascript" src="Documentation_Paths.js"></script>
+<script>
+  menuOpen = true;
+  docOpen = false;
+  menuLocked = true;
+  viewportTocOpen = false;
+  docLoaded = false;
+
+  function addClass(selector, type) {
+    document.querySelectorAll(selector).forEach(function(element) {
+      element.classList.add(type);
+    });
+  }
+
+  function removeClass(selector, type) {
+    document.querySelectorAll(selector).forEach(function(element) {
+      element.classList.remove(type);
+    });
+  }
+
+  function hide(selector) {
+    addClass(selector, 'hidden');
+  }
+
+  function show(selector) {
+    removeClass(selector, 'hidden');
+  }
+
+  function toggle(selector, type = 'hidden') {
+    document.querySelectorAll(selector).forEach(function(element) {
+      element.classList.toggle(type);
+    });
+  }
+
+  function setVisibility() {
+    hide('#error-text-block');
+
+    if (menuOpen) {
+      show('.visible-in-menu');
+      hide('.invisible-in-menu');
+    } else {
+      hide('.visible-in-menu');
+      show('.invisible-in-menu');
+    }
+
+    if (viewportTocOpen) {
+      getViewportHeaders();
+
+      show('#viewport-outline-container');
+    } else {
+      hide('#viewport-outline-container');
+    }
+
+    if (docOpen) {
+      show('.visible-in-docs');
+      hide('.invisible-in-docs');
+
+      addClass('#navigation', 'in-doc');
+      addClass('#explorer-title', 'centered');
+    } else {
+      hide('.visible-in-docs');
+      show('.invisible-in-docs');
+
+      removeClass('#navigation', 'in-doc');
+      removeClass('#explorer-title', 'centered');
+    }
+  }
+
+  function toggleViewportContents(visible) {
+    if (visible == null) {
+      viewportTocOpen = !viewportTocOpen;
+    } else {
+      viewportTocOpen = visible;
+    }
+
+    setVisibility();
+  }
+
+  function toggleMenu(open) {
+    if (menuLocked) {
+      return;
+    }
+
+    if (open == null) {
+      menuOpen = !menuOpen;
+    } else {
+      menuOpen = open;
+    }
+
+    setVisibility();
+  }
+
+  function loadContentListItem(parent, item) {
+    var titleHtml = item.title;
+    var loadThis = `loadPage("${item.url}", "${item.title}", "${item.id}", ${item.hasConnector}, "${item.fallback}");`;
+    var childrenElement = document.createElement('details');
+    var titleElement = document.createElement('summary');
+    
+    if (item.format)
+    {
+      var finalFormat = item.format.replace("{loadThis}", loadThis);;
+
+      for (var key in item)
+      {
+        finalFormat = finalFormat.replace("{" + key + "}", item[key]);
+      };
+      
+      titleHtml = finalFormat;
+    } else if (item.url) {
+      titleHtml = `<a href='#' onclick='${loadThis}'>${item.title}</a>`;
+    }
+
+    titleElement.classList.add('toc-heading');
+    titleElement.label = item.title;
+    titleElement.innerHTML = titleHtml;
+    childrenElement.appendChild(titleElement);
+
+    if (item.open == true || item.open == null)
+    {
+      childrenElement.open = true;
+    }
+
+    if (item.id) {
+      childrenElement.id = item.id;
+    }
+
+    if (item.classList)
+    {
+      item.classList.forEach(function (item) {
+        childrenElement.classList.add(item);
+      });
+    }
+
+    if (item.children && item.children.length > 0)
+    {
+      var childList = document.createElement('ul');
+      for (var i = 0; i < item.children.length; i++) {
+        loadContentListItem(childList, item.children[i]);
+      }
+      childrenElement.appendChild(childList);
+    } else {
+      titleElement.classList.add('toc-nochildren');
+    }
+
+    parent.appendChild(childrenElement);
+  }
+
+  function loadContents() {
+    var contentsList = document.getElementById('contents-list');
+    for (var i = 0; i < tableOfContents.length; i++) {
+      loadContentListItem(contentsList, tableOfContents[i]);
+    }
+  }
+
+  function loadHome(visible) {
+    if (visible) {
+      docOpen = false;
+      viewportTocOpen = false;
+      menuLocked = true;
+      menuOpen = true;
+      setVisibility();
+    } else {
+      docOpen = true;
+      viewportTocOpen = false;
+      menuOpen = false;
+      menuLocked = false;
+      setVisibility();
+    }
+  }
+
+  function setTitle(title) {
+    document.getElementById('title-text').innerHTML = title;
+  }
+
+  function setError(message) {
+    document.getElementById('error-text').innerHTML = message;
+    show('#error-text-block');
+  }
+
+  function loadById(id) {
+    var doc = getDocInfo(id);
+    if (doc) {
+      loadPage(doc.url, doc.title, id, doc.hasConnector, doc.fallback);
+    } else {
+      console.error("No documentation entry found with the id: " + id);
+    }
+  }
+
+  function loadPage(url, title, docId, hasConnector, fallback) {
+    docLoaded = false;
+    setCurrentDoc(docId);
+    hide("#outline-menu-button");
+
+    if (url == "home") {
+      setTitle("Documentation Explorer");
+      loadHome(true);
+    } else {
+      if (title) {
+        setTitle(title);
+      }
+
+      var contentFrame = document.getElementById('content-frame');
+      contentFrame.src = url;
+
+      loadHome(false);
+
+      if (hasConnector) {
+        setTimeout(function() {
+          if (!docLoaded) {
+            if (fallback) {
+              loadPage(fallback, title, docId, hasConnector, null);
+            } else {
+              setError("Failed to receive a response from the documentation file and no suitable fallback could be found. This may be due to a network error or the file not being found. Document outline will be disabled. Please try again later.");
+            }
+          }
+        }, 500);
+      }
+    }
+  }
+
+  function updateViewportHeaders(headers) {
+    var viewportOutline = document.getElementById('viewport-outline');
+    viewportOutline.innerHTML = "";
+
+    for (var i = 0; i < headers.length; i++) {
+      var header = headers[i];
+
+      if (header.text.trim() == "") {
+        continue;
+      }
+
+      var headerElement = document.createElement('li');
+      headerElement.style = "list-style: decimal";
+      headerElement.innerHTML = `<a href='#' onclick='gotoViewportHeader("${header.id}")'>${header.text}</a>`;
+      viewportOutline.appendChild(headerElement);
+    }
+  }
+
+  function getViewportHeaders() {
+    messageFrame({message: "get_headers"})
+  }
+
+  function gotoViewportHeader(id) {
+    messageFrame({message: "goto", target: id});
+  }
+
+  function messageFrame(message) {
+    document.getElementById('content-frame').contentWindow.postMessage(message, "*");
+  }
+
+  function getDocInfo(id, curList) {
+    if (id == null || id == "") {
+      return null;
+    }
+
+    var list = curList ? curList : tableOfContents;
+    for (var i = 0; i < list.length; i++) {
+      var item = list[i];
+
+      if (item.id == id) {
+        return item;
+      } else if (item.children) {
+        var got = getDocInfo(id, item.children);
+        if (got) {
+          return got;
+        }
+      }
+    }
+
+    return null;
+  }
+
+  function getCurrentDoc() {
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    return {
+      doc: urlParams.get('doc'),
+      header: urlParams.get('heading')
+    }
+  }
+  function setCurrentDoc(doc, header) {
+    const urlParams = new URLSearchParams(window.location.search);
+
+    if (doc != null && urlParams.get('doc') != doc) {
+      urlParams.set('doc', doc);
+      urlParams.set('heading', header);
+    } else {
+      urlParams.delete('doc');
+      urlParams.delete('heading');
+    }
+    
+    let newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + "?" + urlParams.toString();
+    window.history.pushState({ path: newUrl }, '', newUrl)
+  }
+
+  window.addEventListener('message', function(event) {
+    var message = event.data.message;
+    var sender = event.source;
+
+    if (message == "header_list") {
+      updateViewportHeaders(event.data.headers);
+    } else if (message == "loaded") {
+      show("#outline-menu-button");
+      docLoaded = true;
+
+      var curDoc = getCurrentDoc();
+
+      if (curDoc.header != null) {
+        gotoViewportHeader(curDoc.header);
+      }
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var curDoc = getCurrentDoc();
+    var doc = getDocInfo(curDoc.doc);
+
+    loadContents();
+
+    if (doc == null){
+      loadHome(true);
+    } else {
+      loadPage(doc.url, doc.title, curDoc.doc);
+    }
+  });
+
+</script>

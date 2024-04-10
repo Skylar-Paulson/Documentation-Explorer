@@ -1,0 +1,572 @@
+<!DOCTYPE html><html><head>
+      <title>Markdown_Quickstart_Guide</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\SkylarPaulson\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.13\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      <div>
+<script type="text/javascript" src="../../Connector.js"></script>
+<hidden id="top">
+<hr>
+<h4 id="markdown-quickstart-guide">Markdown Quickstart Guide </h4>
+<blockquote>
+<p>Below you can find a basic high-level overview of Markdown and its usefulness as well as links to various resources to assist you when writing documentation files using Markdown.<br>
+<em><strong>Note:</strong> This is by no means a comprehensive guide. For further reading, refer to <a href="#web-resources">Web Resources</a>.</em></p>
+</blockquote>
+<blockquote>
+<p><em>For the best experience, download and view the HTML version directly in your browser.</em></p>
+</blockquote>
+<hr>
+<h2 id="contents">Contents </h2>
+<ul>
+<li><a href="#contents">Contents</a></li>
+<li><a href="#what-is-markdown">What is Markdown?</a></li>
+<li><a href="#web-resources">Web Resources</a></li>
+<li><a href="#editing-markdown">Editing Markdown</a>
+<ul>
+<li><a href="#visual-studio-code-vscode">Visual Studio Code (VSCode)</a>
+<ul>
+<li><a href="#extensions">Extensions</a>
+<ul>
+<li><a href="#markdown-preview-enhanced">Markdown Preview Enhanced</a></li>
+<li><a href="#markdown-all-in-one">Markdown All in One</a></li>
+<li><a href="#markdownlint">markdownlint</a></li>
+<li><a href="#code-spell-checker">Code Spell Checker</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#examples">Examples</a>
+<ul>
+<li><a href="#headings">Headings</a></li>
+<li><a href="#heading-links">Heading Links</a></li>
+<li><a href="#custom-heading-links-custom-link">Custom Heading Links {#custom-link}</a></li>
+<li><a href="#font-modifiers-bold-italics-strikethrough-etc">Font Modifiers (<strong>Bold</strong>, <em>Italics</em>, <s>Strikethrough</s>, etc)</a></li>
+<li><a href="#page-dividers">Page Dividers</a></li>
+<li><a href="#math">Math</a></li>
+<li><a href="#code-blocks">Code Blocks</a>
+<ul>
+<li><a href="#with-syntax-highlighting">With Syntax Highlighting</a></li>
+<li><a href="#nested-code-blocks">Nested Code Blocks</a></li>
+</ul>
+</li>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#check-list">Check List</a></li>
+<li><a href="#definitions">Definitions</a></li>
+<li><a href="#quote-blocks">Quote Blocks</a></li>
+<li><a href="#tables">Tables</a></li>
+<li><a href="#html">HTML</a></li>
+<li><a href="#links">Links</a></li>
+<li><a href="#footnotes">Footnotes</a></li>
+<li><a href="#images">Images</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><a href="#contents">Back to top</a></p>
+<hr>
+<h2 id="what-is-markdown">What is Markdown? </h2>
+<p>Markdown is a markup language designed to convert text to HTML which provides an easy way to create documentation and other files that can be previewed and exported with rich formatting, while still being readable as plain-text. Syntax highlighting for Markdown is supported by most modern code editors.</p>
+<p>Markdown supports code blocks, equations, HTML tags and styling, images, tables, and pretty much anything else you'd need to write effective and visually pleasing documentation. Markdown (or similar) should be preferred over WYSIWYG editors like Microsoft Word when creating application technical documentation files going forward for better readability, consistency, and flexibility. While standard word processors are great for writing reports or essays, they fall short when it comes to the kind of formatting required for most technical documentation files.</p>
+<p>To learn more about Markdown, check out <a href="https://daringfireball.net/projects/markdown/">the creator's website</a> which includes syntax information and a tool for experimenting with Markdown in-browser and displaying the resulting HTML.</p>
+<blockquote>
+<p><em><strong>Note:</strong> When previewing or exporting Markdown files, how the resulting file looks will be mostly up to the Markdown parser used to do the preview/export. In my case, I'm using <a href="#visual-studio-code-vscode">VSCode</a> with the <a href="#markdown-preview-enhanced">Markdown Preview Enhanced</a> extension and exporting to HTML from the preview using the github-light.css theme. Mileage may vary with different parsers but the overall syntax and result should be similar.</em></p>
+</blockquote>
+<hr>
+<p><a href="#contents">Back to top</a></p>
+<hr>
+<h2 id="web-resources">Web Resources </h2>
+<p><em><strong><a href="https://www.markdownguide.org">Markdown Guide</a></strong></em><br>
+<strong>Link:</strong> <a href="https://www.markdownguide.org">https://www.markdownguide.org</a><br>
+A very useful website that goes in depth on standard Markdown formatting with basic and advanced examples and hacks to minimize the any learning curves. It's an excellent resource that you can reference as you begin your journey into Markdown.</p>
+<p><em><strong><a href="https://markdown-it.github.io/">markdown-it demo</a></strong></em><br>
+<strong>Link:</strong> <a href="https://markdown-it.github.io/">https://markdown-it.github.io/</a><br>
+A demo page created to act as a guide for markdown-it; a powerful Markdown parser with support for some non-standard features. By default gives an outline of Markdown features and their usage with a side-by-side view of the raw plaintext Markdown (left) and the HTML it generates (right.) Also allows you to edit, preview, and debug Markdown in-browser by altering the contents of the left pane.</p>
+<p><em><strong><a href="https://daringfireball.net/projects/markdown/">Daring Fireball</a></strong></em><br>
+<strong>Link:</strong> <a href="https://daringfireball.net/projects/markdown/">https://daringfireball.net/projects/markdown/</a><br>
+The creator's website. Contains information about Markdown, its purpose, and its usage.</p>
+<hr>
+<p><a href="#contents">Back to top</a></p>
+<hr>
+<h2 id="editing-markdown">Editing Markdown </h2>
+<p>Most modern code editors have built-in support for Markdown syntax highlighting. Chances are, your preferred editor already supports it. While choose one editor over another won't impact your ability to write with Markdown, some will do it better than others and offer features to alleviate any pain points of manually formatting out documents in plaintext. Mileage may vary depending on what you choose to use.</p>
+<p>The author of this guide personally uses and highly recommends <a href="#visual-studio-code-vscode">Visual Studio Code (VSCode)</a> and will be focusing on that.<br>
+If you find or use any editors you want to recommend, feel free to drop a <a href="mailto:spaulson@adworthy.com">suggestion</a>.</p>
+<h3 id="visual-studio-code-vscodehttpscodevisualstudiocom"><a href="https://code.visualstudio.com/">Visual Studio Code (VSCode)</a> </h3>
+<p><a href="https://code.visualstudio.com/">Visual Studio Code</a> (VSCode for short) is a fantastic free, cross-platform, <a href="https://github.com/microsoft/vscode">open-source</a> code editor developed by Microsoft. It supports a variety of languages, a plethora of configuration options, source control integration, execution &amp; debugging, has an entire marketplace of first and third-party extensions to add any functionality you could ever need, and much more. Relevant to this guide, it also includes basic syntax highlighting and preview support for Markdown.</p>
+<img src=".resources/images/vscode1.jpg" alt="VSCode" onerror="this.onerror=null; this.src='https://adworthyinc.sharepoint.com/sites/AdworthyProgrammers/Shared%20Documents/Documentation/__DOCUMENTATION_GUIDES/Markdown/.resources/images/vscode1.jpg'">
+<hr>
+<h4 id="extensions">Extensions </h4>
+<p>I highly recommend installing the extensions listed below to aid you as you work with Markdown.<br>
+A few benefits are outlined below:</p>
+<ul>
+<li>Linting.</li>
+<li>Better document previews, with additional functionality and features such as in-preview editing, stylization, and exporting.</li>
+<li>Exporting to different files types (HTML, PDF, PNG, etc.) with support for easy one-click stylization.</li>
+<li>Auto-completion.</li>
+<li>Keyboard shortcuts.</li>
+<li>Task automation, such as automatic table of contents creation and on-save updating.</li>
+<li>In-editor formatting.</li>
+<li>In-editor spell checking.</li>
+<li>And more.</li>
+</ul>
+<hr>
+<h5 id="markdown-preview-enhanced">Markdown Preview Enhanced </h5>
+<p><strong>Author:</strong> <a href="https://marketplace.visualstudio.com/publishers/shd101wyy">Yiyi Wang</a><br>
+<strong>Link:</strong> <a href="https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced">Markdown Preview Enhanced - Visual Studio Marketplace</a></p>
+<p>This extension provides nicely formatted previews and eases the process of exporting markdown files to other file types. Once installed, CTRL + Shift + V can be used to open a preview of the current document being edited. Once previewing, right clicking anywhere in the preview will give you export options, including as HTML.</p>
+<p>If exporting to different file types, I recommend exporting from the preview window by right clicking to open the preview context menu and selecting the export option there to ensure the result is consistent with the preview. How the resulting file looks is entirely up to the parser used to generate the file, so exporting from the preview will help avoid any unexpected formatting or style issues. Any in-preview stylization from the extension (such as color themes) will be included in the exported file if the file type supports it.</p>
+<blockquote>
+<p><em><strong>For HTML exports:</strong></em></p>
+<ul>
+<li><em>Use Right Click &gt; Export &gt; HTML &gt; HTML (offline) to export to HTML.</em></li>
+</ul>
+</blockquote>
+<blockquote>
+<p><em><strong>For PDF exports:</strong></em></p>
+<ul>
+<li><em>Ensure Google Chrome is installed.</em></li>
+<li><em>Use Right Click &gt; Export &gt; Chrome (Puppeteer) &gt; PDF to export to PDF.</em></li>
+<li><em>If you encounter an error stating chrome.exe cannot be found, open the extension's settings, find the "Chrome Path" setting, and set it to the full file path to the chrome.exe executable (include in the executable in the path.)</em></li>
+</ul>
+</blockquote>
+<blockquote>
+<p><strong>Recommended Preview Themes for Exporting</strong><br>
+<em>Preview Theme &gt; Light &gt; github-light.css</em><br>
+<em>Code Block Theme &gt; Light &gt; default.css</em><br>
+<em>Reveal.js Theme &gt; Light &gt; light.css</em></p>
+</blockquote>
+<hr>
+<h5 id="markdown-all-in-one">Markdown All in One </h5>
+<p><strong>Author:</strong> <a href="https://marketplace.visualstudio.com/publishers/yzhang">Yu Zhang</a><br>
+<strong>Link:</strong> <a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one">Markdown All in One - Visual Studio Marketplace</a></p>
+<p>Provides keyboard shortcuts, auto-completion recommendations, automatic table of contents, in-editor formatting, simplified list editing, and more.</p>
+<p>Overall, provides numerous quality of life improvements that make editing Markdown significantly easier.</p>
+<hr>
+<h5 id="markdownlint">markdownlint </h5>
+<p><strong>Author:</strong> <a href="https://marketplace.visualstudio.com/publishers/DavidAnson">David Anson</a><br>
+<strong>Link:</strong> <a href="https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint">markdownlint - Visual Studio Marketplace</a></p>
+<p>Provides linting support and best practice guidance while editing markdown in VSCode. Highlights formatting issues with explanations to assist with writing and formatting.</p>
+<p>I've included a <code>.markdownlint.json</code> configuration file in the parent folder of this file that configures various markdownlint warnings and settings.<br>
+If you would like to include this file in another documentation folder, simply create a new file named <code>.markdownlint.json</code> in the target folder and paste in the following:</p>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token punctuation">{</span>
+    <span class="token property">"extends"</span><span class="token operator">:</span> <span class="token string">"../__DOCUMENTATION_GUIDES/Markdown/.markdownlint.json"</span>
+<span class="token punctuation">}</span>
+</code></pre><p>This will bring any settings from my configuration file over to yours. If there's anything you want to change, you can simply add it below the <code>"extends"</code> line. Adjust the path as needed.</p>
+<hr>
+<h5 id="code-spell-checker">Code Spell Checker </h5>
+<p><strong>Author:</strong> <a href="https://marketplace.visualstudio.com/publishers/streetsidesoftware">Street Side Software</a><br>
+<strong>Link:</strong> <a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker">Code Spell Checker - Visual Studio Marketplace</a></p>
+<p>Provides in-editor spell checking. One of the downsides to writing documents in a code editor as opposed to something like Microsoft Word is you lose the grammar checking that comes built-in with the majority of word processors. This extension alleviates that pain point by adding in-code spell checking. It will highlight misspelled words and when viewing warnings will give you a list of words in order of most likely to least likely for what it thinks you're trying to spell. It also allows you to add unknown words to your personal dictionary so they aren't incorrectly marked as incorrect. This makes it significantly easier to avoid spelling mistakes while writing especially large documents.</p>
+<hr>
+<p><a href="#contents">Back to top</a></p>
+<hr>
+<h2 id="examples">Examples </h2>
+<p>Below you can find some examples of various elements followed by code blocks showing the Markdown used to generate them.</p>
+<hr>
+<h3 id="headings">Headings </h3>
+<h1 id="biggest-1">Biggest 1 </h1>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">#</span> Biggest 1</span>
+</code></pre><h1>Biggest 2</h1>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important">Biggest 2
+<span class="token punctuation">=========</span></span>
+</code></pre><h2 id="bigger-1">Bigger 1 </h2>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">##</span> Bigger 1</span>
+</code></pre><h2>Bigger 2</h2>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important">Bigger 2
+<span class="token punctuation">--------</span></span>
+</code></pre><h3 id="big">Big </h3>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">###</span> Big</span>
+</code></pre><h4 id="small">Small </h4>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">####</span> Small</span>
+</code></pre><h5 id="smaller">Smaller </h5>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">#####</span> Smaller</span>
+</code></pre><h6 id="smallest">Smallest </h6>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">######</span> Smallest</span>
+</code></pre><hr>
+<p><a href="#contents">Back to top</a></p>
+<hr>
+<h3 id="heading-links">Heading Links </h3>
+<p><a href="#heading-links">Heading link</a></p>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">###</span> Heading Links</span>
+
+<span class="token url">[<span class="token content">Heading link</span>](<span class="token url">#Heading-links</span>)</span>
+</code></pre><h3 id="custom-link">Custom Heading Links </h3>
+<p><a href="#custom-link">Custom heading link</a></p>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">###</span> Custom Heading Links {#custom-link}</span>
+
+<span class="token url">[<span class="token content">Custom heading link</span>](<span class="token url">#custom-link</span>)</span>
+</code></pre><hr>
+<p><a href="#contents">Back to top</a></p>
+<hr>
+<h3 id="font-modifiers-bold-italics-strikethrough-etc">Font Modifiers (<strong>Bold</strong>, <em>Italics</em>, <s>Strikethrough</s>, etc) </h3>
+<p><strong>Bold</strong><br>
+<em>Italics</em><br>
+<s>Strikethrough</s><br>
+<u>Underscore</u><br>
+<mark>Highlight</mark><br>
+<sub>Subscript</sub> (H<sub>2</sub>O)<br>
+<sup>Superscript</sup> (2<sup>4</sup>)<br>
+<sup>A</sup>H<sub>H</sub>H<sup>H</sup>H<sub>H</sub>H<sup>H</sup>H<sub>H</sub>H<sup>H</sup>H<sub>H</sub>H<sup>H</sup></p>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">###</span> Font Modifiers (**Bold**, *Italics*, ~~Strikethrough~~, etc)</span>
+
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">Bold</span><span class="token punctuation">**</span></span>
+<span class="token italic"><span class="token punctuation">*</span><span class="token content">Italics</span><span class="token punctuation">*</span></span>
+<span class="token strike"><span class="token punctuation">~~</span><span class="token content">Strikethrough</span><span class="token punctuation">~~</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>u</span><span class="token punctuation">&gt;</span></span>Underscore<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>u</span><span class="token punctuation">&gt;</span></span>
+==Highlight==
+<span class="token strike"><span class="token punctuation">~</span><span class="token content">Subscript</span><span class="token punctuation">~</span></span> (H<span class="token strike"><span class="token punctuation">~</span><span class="token content">2</span><span class="token punctuation">~</span></span>O)
+^Superscript^ (2^4^)
+^A^H<span class="token strike"><span class="token punctuation">~</span><span class="token content">H</span><span class="token punctuation">~</span></span>H^H^H<span class="token strike"><span class="token punctuation">~</span><span class="token content">H</span><span class="token punctuation">~</span></span>H^H^H<span class="token strike"><span class="token punctuation">~</span><span class="token content">H</span><span class="token punctuation">~</span></span>H^H^H<span class="token strike"><span class="token punctuation">~</span><span class="token content">H</span><span class="token punctuation">~</span></span>H^H^
+</code></pre><hr>
+<p><a href="#contents">Back to top</a></p>
+<hr>
+<h3 id="page-dividers">Page Dividers </h3>
+<hr>
+<hr>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">###</span> Page Dividers</span>
+
+<span class="token hr punctuation">---</span>
+___
+
+</code></pre><hr>
+<p><a href="#contents">Back to top</a></p>
+<hr>
+<h3 id="math">Math </h3>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msqrt><mfrac><mn>52371</mn><mn>11</mn></mfrac></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{\frac{52371}{11}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.84em;vertical-align:-0.6049em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.2351em;"><span class="svg-align" style="top:-3.8em;"><span class="pstrut" style="height:3.8em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">11</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">52371</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-3.1951em;"><span class="pstrut" style="height:3.8em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.88em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.88em" viewBox="0 0 400000 1944" preserveAspectRatio="xMinYMin slice"><path d="M983 90
+l0 -0
+c4,-6.7,10,-10,18,-10 H400000v40
+H1013.1s-83.4,268,-264.1,840c-180.7,572,-277,876.3,-289,913c-4.7,4.7,-12.7,7,-24,7
+s-12,0,-12,0c-1.3,-3.3,-3.7,-11.7,-7,-25c-35.3,-125.3,-106.7,-373.3,-214,-744
+c-10,12,-21,25,-33,39s-32,39,-32,39c-6,-5.3,-15,-14,-27,-26s25,-30,25,-30
+c26.7,-32.7,52,-63,76,-91s52,-60,52,-60s208,722,208,722
+c56,-175.3,126.3,-397.3,211,-666c84.7,-268.7,153.8,-488.2,207.5,-658.5
+c53.7,-170.3,84.5,-266.8,92.5,-289.5z
+M1001 80h400000v40h-400000z"></path></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.6049em;"><span></span></span></span></span></span></span></span></span></p>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">###</span> Math</span>
+
+$\sqrt{\frac{52371}{11}}$
+</code></pre><hr>
+<p><a href="#contents">Back to top</a></p>
+<hr>
+<h3 id="code-blocks">Code Blocks </h3>
+<p><code>An inline code block.</code></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>A 
+multiline
+code
+block
+</code></pre><pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">###</span> Code Blocks</span>
+
+<span class="token code-snippet code keyword">`An inline code block.`</span>
+
+<span class="token code"><span class="token punctuation">```</span>
+<span class="token code-block">A 
+multiline
+code
+block</span>
+<span class="token punctuation">```</span></span>
+</code></pre><h4 id="with-syntax-highlighting">With Syntax Highlighting </h4>
+<pre data-role="codeBlock" data-info="csharp" class="language-csharp csharp"><code><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token return-type class-name"><span class="token keyword keyword-string">string</span></span> <span class="token generic-method"><span class="token function">Example</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>T<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token class-name">T</span> obj<span class="token punctuation">,</span> <span class="token class-name">Markdown</span> markdown<span class="token punctuation">)</span> <span class="token keyword keyword-where">where</span> <span class="token class-name">T</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token keyword keyword-notnull">notnull</span></span>
+<span class="token punctuation">{</span>
+  <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>obj <span class="token keyword keyword-is">is</span> <span class="token class-name">Cheese</span> cheese <span class="token operator">&amp;&amp;</span> cheese<span class="token punctuation">.</span>Enabled <span class="token operator">&amp;&amp;</span> markdown<span class="token punctuation">.</span>Enjoyment <span class="token operator">==</span> EnjoymentEnum<span class="token punctuation">.</span>Fun<span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+    <span class="token class-name"><span class="token keyword keyword-var">var</span></span> anArray <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token constructor-invocation class-name"><span class="token keyword keyword-int">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">{</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-return">return</span> <span class="token function">DoALittleDance</span><span class="token punctuation">(</span>markdown<span class="token punctuation">,</span> cheese<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> anArray<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">####</span> With Syntax Highlighting</span>
+
+<span class="token code"><span class="token punctuation">```</span><span class="token code-language">csharp</span>
+<span class="token code-block language-csharp"><span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token return-type class-name"><span class="token keyword keyword-string">string</span></span> <span class="token generic-method"><span class="token function">Example</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>T<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token class-name">T</span> obj<span class="token punctuation">,</span> <span class="token class-name">Markdown</span> markdown<span class="token punctuation">)</span> <span class="token keyword keyword-where">where</span> <span class="token class-name">T</span> <span class="token punctuation">:</span> <span class="token type-list"><span class="token keyword keyword-notnull">notnull</span></span>
+<span class="token punctuation">{</span>
+  <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>obj <span class="token keyword keyword-is">is</span> <span class="token class-name">Cheese</span> cheese <span class="token operator">&amp;&amp;</span> cheese<span class="token punctuation">.</span>Enabled <span class="token operator">&amp;&amp;</span> markdown<span class="token punctuation">.</span>Enjoyment <span class="token operator">==</span> EnjoymentEnum<span class="token punctuation">.</span>Fun<span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+    <span class="token class-name"><span class="token keyword keyword-var">var</span></span> anArray <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token constructor-invocation class-name"><span class="token keyword keyword-int">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">{</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-return">return</span> <span class="token function">DoALittleDance</span><span class="token punctuation">(</span>markdown<span class="token punctuation">,</span> cheese<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> anArray<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></span>
+<span class="token punctuation">```</span></span>
+</code></pre><h4 id="nested-code-blocks">Nested Code Blocks </h4>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">####</span> Nested Code Blocks</span>
+
+<span class="token code"><span class="token punctuation">```</span><span class="token code-language">```markdown</span>
+<span class="token code-block language-markdown"><span class="token title important"><span class="token punctuation">####</span> Nested Code Blocks</span>
+
+`````markdown
+<span class="token title important"><span class="token punctuation">####</span> Nested Code Blocks</span>
+
+````markdown
+<span class="token title important"><span class="token punctuation">###</span> Code Blocks</span>
+
+```csharp
+public static string Example<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>T</span><span class="token punctuation">&gt;</span></span>(T obj, Markdown markdown) where T : notnull
+{
+  if (obj is Cheese cheese &amp;&amp; cheese.Enabled &amp;&amp; markdown.Enjoyment == EnjoymentEnum.Fun)
+  {
+    var anArray = new int[]{ 1, 2, 3, 4, 5 };
+    return DoALittleDance(markdown, cheese, true, 1, anArray);
+  }
+}</span>
+<span class="token punctuation">```</span></span>
+````
+`````
+``````
+</code></pre><hr>
+<p><a href="#contents">Back to top</a></p>
+<hr>
+<h3 id="lists">Lists </h3>
+<ul>
+<li>First</li>
+<li>Second</li>
+<li>Third</li>
+</ul>
+<ul>
+<li>First</li>
+<li>Second</li>
+<li>Third</li>
+</ul>
+<ul>
+<li>First</li>
+<li>Second</li>
+<li>Third</li>
+</ul>
+<ol>
+<li>First</li>
+<li>Second</li>
+<li>Third</li>
+</ol>
+<blockquote>
+<usingthisemptytagtobreakthepreviouslist>
+</usingthisemptytagtobreakthepreviouslist></blockquote>
+<ol>
+<li>First</li>
+<li>Second</li>
+<li>Third</li>
+</ol>
+<ul>
+<li>First
+<ul>
+<li>First
+<ul>
+<li>First
+<ul>
+<li>First
+<ul>
+<li>...</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">###</span> Lists</span>
+
+<span class="token list punctuation">-</span> First
+<span class="token list punctuation">-</span> Second
+<span class="token list punctuation">-</span> Third
+
+<span class="token list punctuation">+</span> First
+<span class="token list punctuation">+</span> Second
+<span class="token list punctuation">+</span> Third
+
+<span class="token list punctuation">*</span> First
+<span class="token list punctuation">*</span> Second
+<span class="token list punctuation">*</span> Third
+
+<span class="token list punctuation">1.</span> First
+<span class="token list punctuation">1.</span> Second
+<span class="token list punctuation">1.</span> Third
+
+<span class="token blockquote punctuation">&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>UsingThisEmptyTagToBreakThePreviousList</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token list punctuation">1.</span> First
+<span class="token list punctuation">2.</span> Second
+<span class="token list punctuation">3.</span> Third
+
+<span class="token list punctuation">-</span> First
+  <span class="token list punctuation">-</span> First
+    <span class="token list punctuation">-</span> First
+      <span class="token list punctuation">-</span> First
+        <span class="token list punctuation">-</span> ...
+</code></pre><hr>
+<p><a href="#contents">Back to top</a></p>
+<hr>
+<h3 id="check-list">Check List </h3>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked=""> Eggs</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Beans</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked=""> Tomatoes</li>
+</ul>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">###</span> Check List</span>
+
+<span class="token list punctuation">-</span> [x] Eggs
+<span class="token list punctuation">-</span> [ ] Beans
+<span class="token list punctuation">-</span> [x] Tomatoes
+</code></pre><hr>
+<p><a href="#contents">Back to top</a></p>
+<hr>
+<h3 id="definitions">Definitions </h3>
+<dl>
+<dt>Term 1</dt>
+<dd>Something</dd>
+<dt>Term 2</dt>
+<dd>Something</dd>
+<dd>Something else</dd>
+</dl>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">###</span> Definitions</span>
+
+Term 1
+: Something
+
+Term 2
+: Something
+: Something else
+</code></pre><hr>
+<p><a href="#contents">Back to top</a></p>
+<hr>
+<h3 id="quote-blocks">Quote Blocks </h3>
+<blockquote>
+<p>This is a quote block.<br>
+Something else here.</p>
+<blockquote>
+<p>Indented more</p>
+<blockquote>
+<p>Even more</p>
+<blockquote>
+<p><strong>EVEN MORE</strong></p>
+<blockquote>
+<p><sub>hoh</sub></p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">###</span> Quote Blocks</span>
+
+<span class="token blockquote punctuation">&gt;</span> This is a quote block.
+<span class="token blockquote punctuation">&gt;</span> Something else here.
+<span class="token blockquote punctuation">&gt;&gt;</span> Indented more
+<span class="token blockquote punctuation">&gt;&gt;&gt;</span> Even more
+<span class="token blockquote punctuation">&gt;&gt;&gt;&gt;</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">EVEN MORE</span><span class="token punctuation">**</span></span>
+<span class="token blockquote punctuation">&gt;&gt;&gt;&gt;&gt;</span> <span class="token strike"><span class="token punctuation">~</span><span class="token content">hoh</span><span class="token punctuation">~</span></span>
+</code></pre><hr>
+<p><a href="#contents">Back to top</a></p>
+<hr>
+<h3 id="tables">Tables </h3>
+<table>
+<thead>
+<tr>
+<th>Left Aligned Column</th>
+<th style="text-align:left">Also Left Aligned</th>
+<th style="text-align:center">Center Aligned Column</th>
+<th style="text-align:right">Right Aligned Column</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Left</td>
+<td style="text-align:left">Left</td>
+<td style="text-align:center">Center</td>
+<td style="text-align:right">Right</td>
+</tr>
+<tr>
+<td>More Left</td>
+<td style="text-align:left">Another Left</td>
+<td style="text-align:center">Another Center</td>
+<td style="text-align:right">More Right</td>
+</tr>
+<tr>
+<td>You</td>
+<td style="text-align:left">Get</td>
+<td style="text-align:center">The</td>
+<td style="text-align:right">Point</td>
+</tr>
+</tbody>
+</table>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">###</span> Tables</span>
+
+| Left Aligned Column | Also Left Aligned | Center Aligned Column | Right Aligned Column |
+| ---- | :--- | :--: | ---: |
+| Left | Left | Center | Right |
+| More Left | Another Left | Another Center | More Right |
+| You | Get | The | Point |
+</code></pre><hr>
+<p><a href="#contents">Back to top</a></p>
+<hr>
+<h3 id="html">HTML </h3>
+<p><span style="color: red">This is some pretty red text.</span></p>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">red</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">&gt;</span></span>This is some pretty red text.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+</code></pre><hr>
+<p><a href="#contents">Back to top</a></p>
+<hr>
+<h3 id="links">Links </h3>
+<p><a href="https://adworthy.com">Adworthy</a><br>
+<a href="https://adworthy.com">https://adworthy.com</a></p>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">###</span> Links</span>
+
+<span class="token url">[<span class="token content">Adworthy</span>](<span class="token url">https://adworthy.com</span>)</span>
+&lt;https://adworthy.com&gt;
+</code></pre><hr>
+<p><a href="#contents">Back to top</a></p>
+<hr>
+<h3 id="footnotes">Footnotes </h3>
+<p>Footnote<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">###</span> Footnotes</span>
+
+<span class="token url-reference url"><span class="token punctuation">[</span><span class="token variable">^1</span><span class="token punctuation">]</span><span class="token punctuation">:</span> This</span> is a footnote.
+
+Footnote[^1]
+</code></pre><hr>
+<p><a href="#contents">Back to top</a></p>
+<hr>
+<h3 id="images">Images </h3>
+<img src=".resources/images/juice.jpg" alt="Juice" onerror="this.onerror=null; this.src='https://adworthyinc.sharepoint.com/sites/AdworthyProgrammers/Shared%20Documents/Documentation/__DOCUMENTATION_GUIDES/Markdown/.resources/images/juice.jpg'">
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">###</span> Images</span>
+
+<span class="token url"><span class="token operator">!</span>[<span class="token content">Juice</span>](<span class="token url">.resources/images/juice.jpg</span>)</span>
+</code></pre><hr>
+<p><a href="#contents">Back to top</a></p>
+<hr>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>This is a footnote. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</hidden></div>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
