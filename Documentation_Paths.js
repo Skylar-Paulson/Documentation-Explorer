@@ -25,7 +25,7 @@ const tableOfContents = [
             {
                 format: "<b>[Guide]</b> <a href='#' onclick='{loadThis}'>{title}</a>",
                 title: "Markdown",
-                url: "__DOCUMENTATION_GUIDES/Markdown/",
+                url: "_HELP_GUIDES/Markdown/",
                 id: "MarkdownGuide",
                 hasConnector: true
             }
