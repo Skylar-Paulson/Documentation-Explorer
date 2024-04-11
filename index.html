@@ -1086,6 +1086,7 @@
 </body>
 
 <script type="text/javascript" src="Documentation_Paths.js"></script>
+<script type="text/javascript" src="Connector.js"></script>
 <script>
   menuOpen = true;
   docOpen = false;
@@ -1324,15 +1325,15 @@
   }
 
   function getViewportHeaders() {
-    messageFrame({message: "get_headers"})
+    messageFrame({eventType: "get_headers"})
   }
 
   function gotoViewportHeader(id) {
-    messageFrame({message: "goto", target: id});
+    messageFrame({eventType: "goto", target: id});
   }
 
-  function messageFrame(message) {
-    document.getElementById('content-frame').contentWindow.postMessage(message, "*");
+  function messageFrame(data) {
+    connector.postChild(document.getElementById('content-frame').contentWindow, data);
   }
 
   function getDocInfo(id, curList) {
@@ -1365,6 +1366,7 @@
       header: urlParams.get('heading')
     }
   }
+
   function setCurrentDoc(doc, header) {
     const urlParams = new URLSearchParams(window.location.search);
 
@@ -1380,24 +1382,27 @@
     window.history.pushState({ path: newUrl }, '', newUrl)
   }
 
-  window.addEventListener('message', function(event) {
-    var message = event.data.message;
-    var sender = event.source;
+  // INIT CONNECTOR EVENTS
+  connector.register("header_list", function(event) {
+    updateViewportHeaders(event.data.headers);
+  });
 
-    if (message == "header_list") {
-      updateViewportHeaders(event.data.headers);
-    } else if (message == "loaded") {
-      show("#outline-menu-button");
-      docLoaded = true;
+  connector.register("loaded", function(event) {
+    show("#outline-menu-button");
+    docLoaded = true;
 
-      var curDoc = getCurrentDoc();
+    var curDoc = getCurrentDoc();
 
-      if (curDoc.header != null) {
-        gotoViewportHeader(curDoc.header);
-      }
+    if (curDoc.header != null) {
+      gotoViewportHeader(curDoc.header);
     }
   });
 
+  connector.register("load_doc", function(event) {
+    loadById(event.data.docId);
+  });
+
+  // DOC INIT
   document.addEventListener("DOMContentLoaded", function () {
     var curDoc = getCurrentDoc();
     var doc = getDocInfo(curDoc.doc);
