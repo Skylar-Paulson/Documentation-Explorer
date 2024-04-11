@@ -56,7 +56,7 @@ const tableOfContents = [
                         title: "Code Documentation",
                         url: "ExampleApp1/source_docs/html/index.html",
                         id: "ExampleApp1_Source",
-                        hasConnector: true
+                        hasConnector: false
                     },
 
                     // Guides
@@ -98,7 +98,7 @@ const tableOfContents = [
                         title: "Code Documentation",
                         url: "ExampleApp2/source_docs/html/index.html",
                         id: "ExampleApp2_Source",
-                        hasConnector: true
+                        hasConnector: false
                     },
 
                     // Guides
