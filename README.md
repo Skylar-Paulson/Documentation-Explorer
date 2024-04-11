@@ -24,8 +24,8 @@ The below sections outline how to get this basic documentation browser up and ru
 2. Open to your newly created repository on GitHub's website.
 3. Navigate to Settings > Pages and select the branch on your repository containing your documentation files and the Documentation Explorer.
 4. If using GitHub enterprise, optionally set Pages to be private so only members of your organization can access it. Otherwise, your documentation files will be exposed to anyone who finds them which may not be ideal.
-5. Navigate to your newly created Page's site (usually https://your-username.github.io/YourRepositoryName)
-6. That's all! Now just read the included Documentation Guides for more information on how to create documentation files and structure things in a way that GitHub Page's can find them and you should be good to go.
+5. Navigate to your newly created site (usually https://your-username.github.io/YourRepositoryName)
+6. That's all! Now just read the included Documentation Guides for more information on how to create documentation files and structure things in a way that GitHub Pages can find them and you should be good to go.
 
 ### Web Server
 
