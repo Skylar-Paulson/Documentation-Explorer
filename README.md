@@ -10,7 +10,7 @@ Also, I considered adding a search to the document list or for documents themsel
 
 This serves mainly as an example repository demonstrating a potential solution for hosting and browsing documentation files using GitHub Pages.
 
-Also, note that you do not need to emulate the structure of this repository to use this. As long as paths are configured correctly in `Documentation_Paths.js` you can use whatever organizational structure you want. Just keep in mind if you intent to use GitHub Pages that there are some restrictions, like all folders and subfolders requiring either an `index.md` or `index.html` to be discoverable (this includes any subfolders within them, even if those subfolders have index files) and you can't prepend any folders that need to be included with an underscore. Neglecting either of the former will result pages being ignored/inaccessible.
+Also, note that you do not need to emulate the structure of this repository to use this. As long as paths are configured correctly in `Documentation_Paths.js` you can use whatever organizational structure you want. Just keep in mind if you intend to use GitHub Pages that there are some restrictions, like all folders and subfolders requiring either an `index.md` or `index.html` to be discoverable (this includes any subfolders within them, even if those subfolders have index files) and you can't prepend any folders that need to be included with an underscore. Neglecting either of the former will result pages being ignored/inaccessible.
 
 Access the demo [here](https://skylar-paulson.github.io/Documentation-Explorer/?)
 
