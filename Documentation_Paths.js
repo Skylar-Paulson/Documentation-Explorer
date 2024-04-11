@@ -50,6 +50,15 @@ const tableOfContents = [
                 title: `Example App 1 (<a href='#' onclick='loadById("ExampleApp1")'>Guide</a>)`,
                 open: true,
                 children: [
+                    // Source
+                    {
+                        format: "<b>[Source]</b> <a href='#' onclick='{loadThis}'>{title}</a>",
+                        title: "Code Documentation",
+                        url: "ExampleApp1/source_docs/html/index.html",
+                        id: "ExampleApp1_Source",
+                        hasConnector: true
+                    },
+
                     // Guides
                     {
                         format: "<b>[Guide]</b> <a href='#' onclick='{loadThis}'>{title}</a>",
@@ -83,6 +92,15 @@ const tableOfContents = [
                 title: `Example App 2 (<a href='#' onclick='loadById("ExampleApp2")'>Guide</a>)`,
                 open: true,
                 children: [
+                    // Source
+                    {
+                        format: "<b>[Source]</b> <a href='#' onclick='{loadThis}'>{title}</a>",
+                        title: "Code Documentation",
+                        url: "ExampleApp2/source_docs/html/index.html",
+                        id: "ExampleApp2_Source",
+                        hasConnector: true
+                    },
+
                     // Guides
                     {
                         format: "<b>[Guide]</b> <a href='#' onclick='{loadThis}'>{title}</a>",
