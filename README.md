@@ -2,6 +2,8 @@
 
 A very simple, very basic, documentation explorer written entirely in HTML, JavaScript, CSS, and Markdown. This is designed to act as a simple browser for Markdown/HTML documentation files and includes some basic guides to assist in the creation of simple documentation files.
 
+This was created mainly for personal use to offer an easier way to track and quickly browse different documentation files locally. There are probably bugs.
+
 As this is written in purely HTML and JavaScript, support for auto-discovering files is not currently present. This was originally created with the intention of being opened as a local HTML file and had to work around some design constraints related to local files and browser security policies, and so lacks some nice-to-haves in favor of simplicity and the original goal of being usable on a local system without requiring a dedicated web server to view and use.
 
 Also, I considered adding a search to the document list or for documents themselves, but any modern browser's find (Ctrl+F) functionality is more than sufficient so I've opted to abandon that plan.
