@@ -16,7 +16,7 @@ Access the demo [here](https://skylar-paulson.github.io/Documentation-Explorer/?
 
 ## Setup
 
-The below sections outline how to get this basic documentation browser up and running either via GitHub pages or via a normal web server depending on your needs. Ideally, GitHub Pages is preferred only because it allows documentation authors to easily and automatically update documentation files but simply committing changes to the documentation repository.
+The below sections outline how to get this basic documentation browser up and running either via GitHub pages or via a normal web server depending on your needs. Ideally, GitHub Pages is preferred only because it allows documentation authors to easily and automatically update documentation files by simply committing changes to the documentation repository.
 
 ### GitHub Pages
 
